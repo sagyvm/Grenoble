@@ -1,0 +1,10 @@
+REM set classpath=%WORKSPACE%\target\classes;%WORKSPACE%\lib\*
+set CATALINA_HOME=C:\Program Files\Apache Software Foundation\Tomcat 8.0
+
+net stop Tomcat8
+rmdir "%CATALINA_HOME%\webapps\easyleave" /q
+copy target\easyleave.war "%CATALINA_HOME%\webapps"
+net start Tomcat8
+
+java -jar lib\selenium-server-standalone-2.53.0.jar -port 7899 -htmlSuite "*firefox" "http://15.213.6.31:7555/easyleave/" "bin\suite.html" "bin\results.html"  
+echo Test Results : "file:///%WORKSPACE%\bin\results.html"

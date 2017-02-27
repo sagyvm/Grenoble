@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir="." default="zip" name="grenoble">
+	<target name="zip" description="Bundles the Selenium Tests in a ZIP file" >
+        <zip destfile="target/Selenium.zip"
+             basedir="selenium"      	              	        
+        />
+    </target>
+              	 
+</project>
